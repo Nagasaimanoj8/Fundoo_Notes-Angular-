@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="header">
+
+        <div class="name"  fxLayout="row" fxLayoutAlign="start center">
+
+            <div class="F">
+                <h1>F</h1>
+            </div>
+            <div class="u">
+                <h1>u</h1>
+            </div>
+            <div class="n">
+                <h1>n</h1>
+            </div>
+            <div class="d">
+                <h1>d</h1>
+            </div>
+            <div class="o">
+                <h1>o</h1>
+            </div>
+            <div class="o">
+                <h1>o</h1>
+            </div>
+            <div class="N">
+                <h1>N</h1>
+            </div>
+            <div class="o">
+                <h1>o</h1>
+            </div>
+            <div class="t">
+                <h1>t</h1>
+            </div>
+            <div class="e">
+                <h1>e</h1>
+            </div>
+            <div class="s">
+                <h1>s</h1>
+            </div>
+        </div><br>
+        <h1>Create Your Fundoo Account</h1>
+    </div>
+    <div class="right">
+        <div class="image">
+            <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg">
+        </div>
+        <span>One account.<br> All of Google working for you</span>
+    </div>
+    <form [formGroup]="register" (ngSubmit)="onSubmit()">
+        <div class="left">
+            <div class="filed">
+                <mat-form-field appearance="outline">
+                    <mat-label>FirstName</mat-label>
+                    <input matInput placeholder="FirstName" formControlName="FirstName">
+                    <mat-error>enter valid FirstName</mat-error>
+                </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <mat-form-field appearance="outline">
+                    <mat-label> LastName</mat-label>
+                    <input matInput placeholder="LastName" formControlName="LastName">
+                    <mat-error>enter valid LastName</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" style="width:450px ;">
+                    <mat-label>UserName</mat-label>
+                    <input matInput placeholder="UserName" formControlName="UserName">
+                    <mat-error>enter valid Email</mat-error>
+                </mat-form-field> <br>
+                <p>You can use letters, numbers & periods</p>
+                <p><a href="Use my current email address instead">Use my current email address instead</a></p>
+            </div>
+            <div class="filed">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Password" formControlName="Password">
+                    <mat-error>enter valid Password</mat-error>
+                </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <mat-form-field appearance="outline">
+                    <mat-label>ConfirmPassword</mat-label>
+                    <input type="password" matInput placeholder="ConfirmPassword" formControlName="ConfirmPassword">
+                    <mat-error>enter valid ComformPasssword</mat-error>
+                </mat-form-field>
+            </div>
+            <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+            <br><br>
+            <div><input type="checkbox">&nbsp;&nbsp;&nbsp;Show password</div>
+        </div>
+        <div class="bottom">
+            <div>
+                <span routerLink="/signin">Sign in instead</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="Submit" class="button" mat-raised-button color="primary">Next</button>
+
+            </div>
+        </div>
+    </form>
+</div>
