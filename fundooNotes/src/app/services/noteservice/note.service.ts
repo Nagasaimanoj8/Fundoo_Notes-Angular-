@@ -30,4 +30,15 @@ token:any;
     }
     return this.httpservice.getservice('http://127.0.0.1:8000/api/show',true,header)
   }
+  updatenotes(){
+    console.log(this.token);
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+  }
+  return this.httpservice.getservice('http://127.0.0.1:8000/api/updateNotes',true,header)
+
+  }
 }

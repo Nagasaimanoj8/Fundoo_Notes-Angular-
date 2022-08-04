@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,6 +25,7 @@ import { TrashComponent } from './trash/trash.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { IconsComponent } from './icons/icons.component';
 import { DisplayComponent } from './display/display.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DisplayComponent } from './display/display.component';
     TrashComponent,
     CreateNoteComponent,
     IconsComponent,
-    DisplayComponent
+    DisplayComponent,
+    UpdateComponent
     
   ],
   imports: [
@@ -57,7 +59,8 @@ import { DisplayComponent } from './display/display.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,MatSidenavModule,MatToolbarModule,
-    MatListModule,FormsModule
+    MatListModule,FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

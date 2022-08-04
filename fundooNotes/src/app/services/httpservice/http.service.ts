@@ -14,7 +14,8 @@ export class HttpService {
   getservice(url:string,token:boolean=false,httpOptions:any){
     return this.httpClient.get(url,token && httpOptions)
   }
-  putservice(){
+  putservice(url:string,token:boolean=false,httpOptions:any){
+    return this.httpClient.get(url,token && httpOptions)
 
   }
   deleteservice(){
