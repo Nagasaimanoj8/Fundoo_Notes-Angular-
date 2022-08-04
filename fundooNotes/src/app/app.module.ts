@@ -15,6 +15,17 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import { NotesComponent } from './notes/notes.component';
+import { ArchiveComponent } from './archive/archive.component';
+import { TrashComponent } from './trash/trash.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
+import { IconsComponent } from './icons/icons.component';
+import { DisplayComponent } from './display/display.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +35,14 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotpasswordComponent,
     ResetpasswordComponent,
     RegisterComponent,
-    SigninComponent
+    SigninComponent,
+    DashboardComponent,
+    NotesComponent,
+    ArchiveComponent,
+    TrashComponent,
+    CreateNoteComponent,
+    IconsComponent,
+    DisplayComponent
     
   ],
   imports: [
@@ -38,7 +56,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,MatSidenavModule,MatToolbarModule,
+    MatListModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

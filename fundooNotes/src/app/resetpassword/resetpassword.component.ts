@@ -18,7 +18,7 @@ export class ResetpasswordComponent implements OnInit {
   ngOnInit() {
     this.reset = this.formBuilder.group({
 
-      Password: ['', [Validators.required, Validators.email]],
+      NewPassword: ['', [Validators.required, Validators.email]],
       ConformPassword: ['', [Validators.required, Validators.minLength(6)]],
 
     });
@@ -30,7 +30,7 @@ export class ResetpasswordComponent implements OnInit {
         let data={
           name:this.reset.value.FirstName,
           email:this.reset.value.UserName,
-          password:this.reset.value.Password
+          password:this.reset.value.NewPassword
         }
         this.user.reset(data).subscribe((res:any)=>
         {

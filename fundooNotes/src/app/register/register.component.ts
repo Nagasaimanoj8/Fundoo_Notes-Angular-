@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
           console.log("register response",res);
         })
        }
-       else{
+       else{ 
 
         console.log("Invalid data",this.register.value);
        }

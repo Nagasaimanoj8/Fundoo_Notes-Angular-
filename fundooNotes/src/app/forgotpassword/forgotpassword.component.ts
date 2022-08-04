@@ -9,33 +9,30 @@ import { UserService } from '../services/userservice/user.service';
   styleUrls: ['./forgotpassword.component.scss']
 })
 export class ForgotpasswordComponent implements OnInit {
-  Email!: FormGroup;
+  email!: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
   ngOnInit() {
-    this.Email = this.formBuilder.group({
+    this.email = this.formBuilder.group({
 
       Email: ['', [Validators.required, Validators.minLength(6)]],
 
     });
   }
   onSubmit() {
-    if (this.Email.valid) {
-      console.log("vallid data", this.Email.value);
+    if (this.email.valid) {
+      console.log("vallid data", this.email.value);
       let data = {
-        name:this.Email.value.FirstName,
-        email:this.Email.value.Email,
-        password:this.Email.value.Password
- 
-       
-
+        name:this.email.value.FirstName,
+        email:this.email.value.Email,
+        password:this.email.value.Password
       }
       this.user.email(data).subscribe((res: any) => {
         console.log("email response", res)
       })
     } else {
-      console.log("Invalide data", this.Email.value);
+      console.log("Invalide data", this.email.value);
 
     }
 

@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div class="title" fxLayout="column" >
+        <div  *ngIf="isshow">
+            <input  class=text type="text" placeholder="title" [(ngModel)]="title">
+        </div>
+        
+        <div *ngIf="!isshow ||isshow"(click)="show()" >
+            <input  class="notes" type="text" placeholder="take a notes"[(ngModel)]="description">
+        </div>
+        
+        <div *ngIf="isshow"  fxLayout="row" fxLayoutAlign="space-between center">
+            <app-icons></app-icons>
+            <button (click)="close()">close</button>
+        </div>
+       
+    </div>
+</div>
