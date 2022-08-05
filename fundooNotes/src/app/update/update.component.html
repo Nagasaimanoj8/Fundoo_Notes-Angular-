@@ -1,11 +1,20 @@
 <div class="main">
     <div class="display" fxLayout="column" fxLayoutAlign="start ">
 
-        <h3>title</h3>
-        <p>description</p>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start ">
-        <app-icons></app-icons>
-        <button>close</button>
+        <div class="title" fxLayout="column" >
+            <div>
+                <input  class=text type="text" placeholder="title" [(ngModel)]="title">
+            </div>
+            
+            <div  >
+                <input  class="notes" type="text" placeholder="take a notes"[(ngModel)]="description">
+            </div>
+            
+            <div   fxLayout="row" fxLayoutAlign="space-between center">
+                <app-icons></app-icons>
+                <button (click)="close()">close</button>
+            </div>
+           
+        </div>
     </div>
 </div>

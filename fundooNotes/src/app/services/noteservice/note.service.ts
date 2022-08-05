@@ -30,15 +30,13 @@ token:any;
     }
     return this.httpservice.getservice('http://127.0.0.1:8000/api/show',true,header)
   }
-  updatenotes(){
-    console.log(this.token);
+  update_note(data:any){
     let header={
-      headers:new HttpHeaders({
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization':'Bearer '+this.token
+        'Authorization': this.token
       })
-  }
-  return this.httpservice.getservice('http://127.0.0.1:8000/api/updateNotes',true,header)
-
+    }
+      return this.httpservice.postservice('notes/updateNotes', data, true, header)
   }
 }
