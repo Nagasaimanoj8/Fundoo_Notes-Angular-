@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NoteService } from '../services/noteservice/note.service';
+import { NoteService } from '../../services/noteservice/note.service';
 
 @Component({
   selector: 'app-create-note',

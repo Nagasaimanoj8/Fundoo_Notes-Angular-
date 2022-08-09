@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArchiveComponent } from './archive/archive.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { NotesComponent } from './notes/notes.component';
-import { RegisterComponent } from './register/register.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { SigninComponent } from './signin/signin.component';
-import { TrashComponent } from './trash/trash.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
