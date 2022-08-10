@@ -26,6 +26,8 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { IconsComponent } from './components/icons/icons.component';
 import { DisplayComponent } from './components/display/display.component';
 import { UpdateComponent } from './components/update/update.component';
+import { AuthguardServiceService } from './services/authguard-service.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 
 @NgModule({
@@ -60,9 +62,14 @@ import { UpdateComponent } from './components/update/update.component';
     FormsModule,
     HttpClientModule,MatSidenavModule,MatToolbarModule,
     MatListModule,FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthguardServiceService 
+  ],
+  bootstrap: [AppComponent],
+  
+
 })
 export class AppModule { }

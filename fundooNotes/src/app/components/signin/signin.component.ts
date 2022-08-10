@@ -32,6 +32,7 @@ export class SigninComponent implements OnInit {
       this.user.signin(data).subscribe((res:any)=>{
         console.log("token",res)
         localStorage.setItem('token',res.success.token)
+        
       })
     }else{
       console.log("invalid data",this.signin.value);

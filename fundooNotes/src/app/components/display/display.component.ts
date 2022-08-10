@@ -10,7 +10,7 @@ import { UpdateComponent } from '../update/update.component';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
-  @Input() childMessage: any;
+  @Input() childMessage: any; 
 
   constructor(public dialog: MatDialog) {}
 

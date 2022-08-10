@@ -17,7 +17,7 @@
         <img class="view" src="assets/view.svg">
         <img class="settings" src="assets/settings.svg">
         <img class="apps" src="assets/apps.svg">
-        <img class="account" src="assets/account.svg">
+        <div (click)="signout()"><img class="account" src="assets/account.svg"></div>
     </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">

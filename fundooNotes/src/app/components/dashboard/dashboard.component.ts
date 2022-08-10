@@ -21,6 +21,7 @@ export class DashboardComponent implements OnDestroy {
   );
 
   private _mobileQueryListener: () => void;
+  route: any;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -31,5 +32,8 @@ export class DashboardComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
+  signout(){
+    localStorage.removeItem('token');
+    this.route.navigateByUrl('/signin');
+  }
 }

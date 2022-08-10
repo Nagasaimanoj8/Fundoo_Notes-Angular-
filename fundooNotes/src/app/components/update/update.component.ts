@@ -25,7 +25,7 @@ export class UpdateComponent implements OnInit {
     console.log("inside update", this.data)
     this.title=this.data.title;
     this.description = this.data.description;
-    this.notesId-this.data.id
+    this.notesId=this.data.id
   } 
   onNoClick(): void {
     this.dialogRef.close();
@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
     let data={
       'title': this.title,
       'description':this.description,
-      'notesId':this.notesId
+      'userId':this.notesId
     }
     this.note. update_note(data).subscribe((res:any)=>{
       console.log(res);
