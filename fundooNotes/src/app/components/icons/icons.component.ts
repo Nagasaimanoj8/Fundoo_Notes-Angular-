@@ -1,7 +1,8 @@
-import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
-import { NoteService } from '../../services/noteservice/note.service';
+import { Component, OnInit,EventEmitter,Output, Input } from '@angular/core';
+import { NoteService } from 'src/app/services/noteservice/note.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-icons',
@@ -9,27 +10,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  @Input() userId:any
-  @Output() archivenote = new EventEmitter<any>();
-  archive:boolean=false;
+  @Input() notedata:any
+  @Output() messageEvent = new EventEmitter<any>(); 
+  archive:boolean=false
 
-  constructor(private note:NoteService,private route:ActivatedRoute,private snackBar:MatSnackBar) { }
+  constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
   isarchive(){
-    
-      console.log('Icons ArchiveNote Api Calling..')
-      let data={
-        userId:[this.userId],
-        archive: 1
-      }
-      console.log(data,this.userId)
-      this.note.archive_note(data).subscribe((res:any)=>{
-        console.log(res)
-        this.archivenote.emit(res)
-        this.snackBar.open('Note Archived')
-      })
-  }  
-  
+    console.log(this.notedata.id);
+    let reqdata= {    
+      userId: this.notedata.id
+    }
+
+    this.note.archive_note(reqdata).subscribe((res:any)=>{
+      console.log(res);
+      this.messageEvent.emit("Note is archived");
+      this.snackBar.open('archived')
+  })
+  }
+  receiveMessage(event:any){
+    console.log(event);
+  this.isarchive();
+}
 }

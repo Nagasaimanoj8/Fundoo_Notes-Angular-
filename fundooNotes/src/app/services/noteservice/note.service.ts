@@ -41,23 +41,23 @@ token:any;
       return this.httpservice.postservice('http://127.0.0.1:8000/api/updateNotes', data, true, header)
   }
   archive_note(data:any){
-    
+    console.log(this.token,data);
     let header={
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+this.token
+        'Authorization': 'Bearer '+ this.token
       })
     }
     return this.httpservice.postservice('http://127.0.0.1:8000/api/archivenote', data, true, header)
   }
   get_archive_note(){
+    console.log(this.token);
     let header={
-      headers: new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+this.token
-
+        'Authorization':'Bearer '+this.token
       })
-    }
-    return this.httpservice.getservice('http://127.0.0.1:8000/api/getarchivenoteslist', true, header)
   }
+  return this.httpservice.getservice('http://127.0.0.1:8000/api/getarchivenoteslist',true,header)
+}
 }
