@@ -17,10 +17,14 @@ export class ArchiveComponent implements OnInit {
     this.getarchivenotes()
   }
   getarchivenotes(){
-    this.note.get_archive_note().subscribe((res:any)=>{
+    this.note.getallnotes().subscribe((res:any)=>{
       console.log(res);
        this.parentMessage = res
-    })
+       this.parentMessage.reverse()
+       this.parentMessage=this.parentMessage.filter((object:any)=>{
+        return object.archive===1;
+       })
+      })
   }
   receiveMessage(event:any){
     console.log(event);

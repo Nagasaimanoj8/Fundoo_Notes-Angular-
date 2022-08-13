@@ -27,11 +27,13 @@ import { IconsComponent } from './components/icons/icons.component';
 import { DisplayComponent } from './components/display/display.component';
 import { UpdateComponent } from './components/update/update.component';
 import { AuthguardServiceService } from './services/authguard-service.service';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { FilterPipe } from './Pipe/filter.pipe';
 
 
 @NgModule({
-  declarations: [
+  declarations:[
     AppComponent,
     RegisterComponent,
     SigninComponent,
@@ -46,7 +48,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     CreateNoteComponent,
     IconsComponent,
     DisplayComponent,
-    UpdateComponent
+    UpdateComponent,
+    FilterPipe,
     
   ],
   imports: [
@@ -63,7 +66,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     HttpClientModule,MatSidenavModule,MatToolbarModule,
     MatListModule,FormsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatMenuModule
   ],
   providers: [
     AuthguardServiceService 

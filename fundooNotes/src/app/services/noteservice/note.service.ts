@@ -50,6 +50,17 @@ token:any;
     }
     return this.httpservice.postservice('http://127.0.0.1:8000/api/archivenote', data, true, header)
   }
+  unarchive_note(data:any){
+    console.log(this.token,data);
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+ this.token
+      })
+    }
+    return this.httpservice.postservice('http://127.0.0.1:8000/api/unarchivenote', data, true, header)
+    
+  }
   get_archive_note(){
     console.log(this.token);
     let header={
@@ -59,5 +70,48 @@ token:any;
       })
   }
   return this.httpservice.getservice('http://127.0.0.1:8000/api/getarchivenoteslist',true,header)
+}
+trash_note(data:any){
+  console.log(this.token);
+  let header={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+  return this.httpservice.postservice('http://127.0.0.1:8000/api/trashnote', data, true, header)
+}
+untrash_note(data:any){
+  console.log(this.token);
+  let header={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+  return this.httpservice.postservice('http://127.0.0.1:8000/api/untrashnote', data, true, header)
+
+}
+change_note_color(data:any){
+  console.log(this.token);
+  let header={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+  return this.httpservice.postservice('http://127.0.0.1:8000/api/updatecolor', data, true, header)
+}
+delete(data:any){
+  console.log(this.token);
+  let header={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+  return this.httpservice.postservice('http://127.0.0.1:8000/api/delete', data, true, header)
+
+
 }
 }

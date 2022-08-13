@@ -1,4 +1,18 @@
-.bell,.archive,.personadd,.img,.pallette,.more{
+.bell,.archive,.personadd,.img,.pallette,.more,.unarchive,.delete,.deleteforever{
     height: 20px;
     padding:0px 0px 0px 15px;  
+}
+::ng-deep .color-menu{
+    width: 160px;
+}
+.color{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 170px;
+}
+.backgroundcolours{
+    outline-style:solid;
+    outline-width: 1.5px;
+    outline-color: black;
 }

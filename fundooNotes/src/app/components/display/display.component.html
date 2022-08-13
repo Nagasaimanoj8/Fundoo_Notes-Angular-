@@ -5,7 +5,7 @@
                 <h3>{{note.title}}</h3>
                 <p>{{note.description}}</p>
             </div>
-            <app-icons [notedata]="note"></app-icons>
+            <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
         </div>
     </div>
 </div>

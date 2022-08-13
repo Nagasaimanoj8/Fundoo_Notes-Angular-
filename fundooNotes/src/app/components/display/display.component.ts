@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
@@ -11,6 +11,8 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class DisplayComponent implements OnInit {
   @Input() childMessage: any; 
+  @Output() changeColorOfNote = new EventEmitter<any>();
+
 
   constructor(public dialog: MatDialog) {}
 
@@ -27,5 +29,9 @@ export class DisplayComponent implements OnInit {
       
     });
   }
+  colourchanged(e:any){
+    console.log(e);
+    this.changeColorOfNote.emit("colour")
+    }
 
 }
