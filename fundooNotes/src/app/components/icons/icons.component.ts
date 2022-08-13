@@ -14,7 +14,7 @@ import { TrashComponent } from '../trash/trash.component';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  colors: Array<any> = [
+  colour = [
     { code: '#ffffff', name: 'white' },
     { code: '#FF6347', name: 'red' },
     { code: '#FF4500', name: 'orange' },

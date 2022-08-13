@@ -1,11 +1,30 @@
-<div class="main" fxLayout="row" fxLayoutAlign="start center">
-    <div *ngFor="let note of childMessage">
-        <div class="display">
-            <div (click)="openDialog(note)">
-                <h3>{{note.title}}</h3>
-                <p>{{note.description}}</p>
+<div class="gridnote" *ngIf="Grid" fxLayoutAlign="start center" ngClass.xs="container-xs" ngClass.md="gridnote-md"
+    ngClass.sm="gridnote-sm">
+    <div class="main" fxLayout="row" fxLayoutAlign="start center" *ngFor="let note of childMessage | filter: message">
+        <div fxLayout="row">
+            <div class="display" [style.background]="note.colour">
+                <div (click)="openDialog(note)">
+                    <h3>{{note.title}}</h3>
+                    <p>{{note.description}}</p>
+                </div>
+                <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
             </div>
-            <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
+        </div>
+    </div>
+</div>
+
+<div class="listnote" *ngIf="!Grid" fxLayoutAlign="start center" ngClass.xs="container-xs" ngClass.md="gridnote-md"
+    ngClass.sm="gridnote-sm">
+    <div class="external" fxLayout="row" fxLayoutAlign="space-around center">
+        <div class="container"fxLayout="column" fxLayoutAlign="start start" *ngFor="let note of childMessage | filter: message">
+        <div fxLayout="row"[style.background]="note.colour">
+            <div class="display" >
+                <div (click)="openDialog(note)">
+                    <h3>{{note.title}}</h3>
+                    <p>{{note.description}}</p>
+                </div>
+                <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
+            </div>
         </div>
     </div>
 </div>

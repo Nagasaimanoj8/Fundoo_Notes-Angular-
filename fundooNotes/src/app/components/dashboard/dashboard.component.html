@@ -14,7 +14,8 @@
         </div>
         <img class="search-icon" src="assets/search.svg">
         <img class="refresh" src="assets/refersh.svg">
-        <img class="view" src="assets/view.svg">
+        <img class="view" src="assets/view.svg"  (click)="list()" *ngIf="gridView" ngClass.xs="icon-xs" ngClass.sm="icon-sm">
+       <img class="view" src="assets/gridview.svg"  (click)="grid()" *ngIf="!gridView" ngClass.xs="icon-xs" ngClass.sm="icon-sm">
         <img class="settings" src="assets/settings.svg">
         <img class="apps" src="assets/apps.svg">
         <div (click)="signout()"><img class="account" src="assets/account.svg"></div>

@@ -12,6 +12,15 @@ import { UpdateComponent } from '../update/update.component';
 export class DisplayComponent implements OnInit {
   @Input() childMessage: any; 
   @Output() changeColorOfNote = new EventEmitter<any>();
+  @Output() updatedisplay = new EventEmitter<string>();
+  @Output() displayArchive = new EventEmitter<string>();
+  @Output() messageEvent = new EventEmitter<any>();
+
+  searchString:any='';
+  message:any;
+  subscription: any;
+  colour:any;
+  Grid:any = true;
 
 
   constructor(public dialog: MatDialog) {}
@@ -22,16 +31,22 @@ export class DisplayComponent implements OnInit {
     const dialogRef = this.dialog.open(UpdateComponent, {
       width: '500px',
        data:note,
+       panelClass: 'my-custom-dialog-class'
     });
 
     dialogRef.afterClosed().subscribe((result:any)=> {
       console.log('The dialog was closed');
-      
+      this.updatedisplay.emit(result);
     });
   }
-  colourchanged(e:any){
-    console.log(e);
+  recieveArchiveNote(event:any){
+    this.displayArchive.emit(event);
+  }
+  colourchanged(event:any){
+    console.log(event);
     this.changeColorOfNote.emit("colour")
     }
-
+    reloadCurrentPage() {
+      window.location.reload();
+     }
 }

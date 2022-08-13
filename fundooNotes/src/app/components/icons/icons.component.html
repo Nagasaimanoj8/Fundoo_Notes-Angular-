@@ -5,12 +5,11 @@
   </button>
   <mat-menu #color="matMenu">
     <div fxLayout="row wrap" style=" width: 180px;">
-        <div *ngFor="let color of colors" class="bg-color">
-            <button mat-icon-button mat-raised-button  [style.background]="color.code" (click)="change_colour(color.Colorcode)"></button>
+        <div *ngFor="let color of colour" class="bg-color">
+            <button mat-icon-button mat-raised-button  [style.background]="color.code"(click)="change_colour(color.code)"></button>
         </div>
     </div>
   </mat-menu>
-  <button mat-icon-button  (click)="isarchive()" *ngIf="!archive && !trash"><img  class= "archive"src="assets/archive.svg"/></button>
   <button mat-icon-button matTooltip="Unarchive" (click)="Unarchive()" *ngIf="archive && !trash">
     <img src="assets/unarchive.svg" class="unarchive">
   </button>
@@ -21,6 +20,7 @@
   <button mat-icon-button matTooltip="Delete forever" *ngIf="trash" (click)="deleteforever()">
     <img src="assets/deleteforever.svg"class="delete">
   </button>
+  <button mat-icon-button  (click)="isarchive()" *ngIf="!archive&&!trash"><img  class= "archive"src="assets/archive.svg"/></button>
 <img *ngIf="!trash" class="more" src="assets/more.svg" alt=""mat-icon-button [matMenuTriggerFor]="menu">
 <mat-menu #menu="matMenu" >
     <button (click)="istrash()" mat-menu-item>Delete note</button>
@@ -32,7 +32,7 @@
 </mat-menu>
 <mat-menu #colorMenu="matMenu">
     <div class="color" fxLayoutGap="2px">
-        <div *ngFor="let color of colors" class="backgroundColours">
+        <div *ngFor="let color of colour" class="backgroundColours">
             <button mat-mini-fab [style.background]="color?.code" (click)="change_colour(color?.code)"></button>
         </div>
     </div>

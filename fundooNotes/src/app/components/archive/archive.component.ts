@@ -9,7 +9,7 @@ import { UpdateComponent } from '../update/update.component';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
-  @Input() childMessage: any;
+ 
   parentMessage:any;
   constructor(private note:NoteService) { }
 
@@ -30,5 +30,8 @@ export class ArchiveComponent implements OnInit {
     console.log(event);
   this.getarchivenotes();
   }
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
 }
