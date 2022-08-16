@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/services/noteservice/note.service';
-import { UpdateComponent } from '../update/update.component';
-
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-archive',
@@ -9,9 +8,9 @@ import { UpdateComponent } from '../update/update.component';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
- 
-  parentMessage:any;
-  constructor(private note:NoteService) { }
+  result:any;
+
+  constructor(private note:NoteService,public dialog: MatDialog,) { }
 
   ngOnInit(): void {
     this.getarchivenotes()
@@ -19,19 +18,14 @@ export class ArchiveComponent implements OnInit {
   getarchivenotes(){
     this.note.getallnotes().subscribe((res:any)=>{
       console.log(res);
-       this.parentMessage = res
-       this.parentMessage.reverse()
-       this.parentMessage=this.parentMessage.filter((object:any)=>{
+       this.result= res
+       this.result.reverse()
+       this.result=this.result.filter((object:any)=>{
         return object.archive===1;
        })
       })
   }
-  receiveMessage(event:any){
-    console.log(event);
+  updatedIcon(event:any){
   this.getarchivenotes();
   }
-  reloadCurrentPage() {
-    window.location.reload();
-   }
-
 }

@@ -18,6 +18,4 @@ export class DataService {
   changeView(flag:boolean){
     this.Grid.next(flag)
   }
-
-
 }

@@ -8,7 +8,6 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
-  @Input() childMessage: any;
   Tresult:any;
   constructor(private note:NoteService) { }
 

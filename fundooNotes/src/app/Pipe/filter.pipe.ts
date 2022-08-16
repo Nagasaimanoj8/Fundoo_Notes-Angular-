@@ -1,21 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'searchfilter'
 })
-export class FilterPipe implements PipeTransform {
+export class SearchfilterPipe implements PipeTransform {
 
-  transform(value: any,searchString?:any){
-    console.log(value,searchString);
+  transform(value: any, args?: any): any {
 
-    if(!searchString ){
+    if (!args) {
       return value;
-    }else{
-      searchString=searchString.toLocaleLowerCase();
+    } else {
+      args = args.toLocaleLowerCase();
     }
-    return value.filter((note:any) =>{
-      return note.title.toLocaleLowerCase().includes(searchString) | note.description.toLocaleLowerCase().includes(searchString);
-      
+    return value.filter((note: any) => {
+      return note.title.toLocaleLowerCase().includes(args) | note.description.toLocaleLowerCase().includes(args);
+
     })
   }
+
 }

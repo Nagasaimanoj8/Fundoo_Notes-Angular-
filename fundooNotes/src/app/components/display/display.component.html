@@ -1,29 +1,29 @@
-<div class="gridnote" *ngIf="Grid" fxLayoutAlign="start center" ngClass.xs="container-xs" ngClass.md="gridnote-md"
-    ngClass.sm="gridnote-sm">
-    <div class="main" fxLayout="row" fxLayoutAlign="start center" *ngFor="let note of childMessage | filter: message">
-        <div fxLayout="row">
+<div class="gridnote" *ngIf="Grid" fxLayout="row wrap" fxLayoutAlign="start start" ngClass.xs="container-xs"
+    ngClass.md="gridnote-md" ngClass.sm="gridnote-sm">
+    <div class="main" fxLayout="column" fxLayoutAlign="space-around start"
+        *ngFor="let note of childMessage | searchfilter:message">
+        <div fxLayout="column">
             <div class="display" [style.background]="note.colour">
                 <div (click)="openDialog(note)">
                     <h3>{{note.title}}</h3>
                     <p>{{note.description}}</p>
                 </div>
-                <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
+                <app-icons [notedata]="note" (changeNoteEvent)=" iconRefresh($event)"></app-icons>
             </div>
         </div>
     </div>
 </div>
-
-<div class="listnote" *ngIf="!Grid" fxLayoutAlign="start center" ngClass.xs="container-xs" ngClass.md="gridnote-md"
-    ngClass.sm="gridnote-sm">
-    <div class="external" fxLayout="row" fxLayoutAlign="space-around center">
-        <div class="container"fxLayout="column" fxLayoutAlign="start start" *ngFor="let note of childMessage | filter: message">
-        <div fxLayout="row"[style.background]="note.colour">
-            <div class="display" >
+<div class="listnote" fxLayout="column" fxLayoutAlign="start center" *ngIf="!Grid" fxLayout="column wrap"
+    ngClass.xs="container-xs" ngClass.md="gridnote-md">
+    <div class="main2" *ngFor="let note of childMessage | searchfilter: message">
+        <div fxLayout=>
+            <div class="display2" [style.background]="note.colour">
                 <div (click)="openDialog(note)">
-                    <h3>{{note.title}}</h3>
-                    <p>{{note.description}}</p>
+                    <h4>{{note.title}}</h4>
+                    <h5>{{note.description}}</h5>
+
+                    <app-icons class="appicons" [notedata]="note" (changeNoteEvent)=" iconRefresh($event)"></app-icons>
                 </div>
-                <app-icons [notedata]="note" (changeColorOfNote)="colourchanged($event)"></app-icons>
             </div>
         </div>
     </div>

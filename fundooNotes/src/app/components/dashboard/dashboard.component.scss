@@ -35,24 +35,9 @@
      user-select: auto;
   }
   mat-nav-list{
-    width: 20vw;
+    width: 15vw;
   }
-  .search{
-    width:100vh;   
-    align-items: center;
-    display: flex;
-    height: 8vh;
-    margin-left: 100px;
-    position:relative;
-    border-radius: 10px;
-    padding:0px 0px 0px 40px;
-    
-  }
-  .search-icon{
-    width: 30px;
-    position: absolute;
-    right: 77%;
-  }
+  
   .refresh{
     margin-left: 30px;
     padding:0px 0px 0px 60px;
@@ -79,4 +64,20 @@
   .icon-sm,.icon-xs{
     margin: 0%;
     width: 10%
+  }
+  .searchdiv{
+    width: 50%;
+    margin-left: 70px;
+    height: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #search {
+    opacity: 0.8;
+  }
+  .search {
+  
+    border-radius: 10%;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.02);
   }

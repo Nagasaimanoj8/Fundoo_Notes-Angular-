@@ -9,10 +9,17 @@
 
 
         <h1 class="example-app-name">Fundoo</h1>
-        <div>
-            <input type="search" placeholder="Search"  class="search">
+        <div class="searchdiv" fxLayout="row" fxLayoutAlign="space-between center" >
+            <mat-form-field appearance="outline" fxHide.xs [style.fontSize.px]="2" class="search" fxFlex="90">
+                <button mat-icon-button class="search-button">
+                    <mat-icon id="search" matTooltip="Search">search</mat-icon>
+                </button>
+
+                <input fxFlex="50" matInput placeholder="Search" [(ngModel)]="searchString" [style.fontSize.px]="18"
+                    (keyup)="searchNote($event)" class="search-window" autocomplete="off" type="text" />
+            </mat-form-field>
         </div>
-        <img class="search-icon" src="assets/search.svg">
+        
         <img class="refresh" src="assets/refersh.svg">
         <img class="view" src="assets/view.svg"  (click)="list()" *ngIf="gridView" ngClass.xs="icon-xs" ngClass.sm="icon-sm">
        <img class="view" src="assets/gridview.svg"  (click)="grid()" *ngIf="!gridView" ngClass.xs="icon-xs" ngClass.sm="icon-sm">

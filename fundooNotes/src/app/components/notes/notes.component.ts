@@ -8,7 +8,7 @@ import { NoteService } from '../../services/noteservice/note.service';
 })
 export class NotesComponent implements OnInit {
   @Output() updatedisplay = new EventEmitter<string>();
-  @Output() changeNoteEvent = new EventEmitter<string>();
+  @Output() changeNoteEvent= new EventEmitter<string>();
   
   parentMessage:any;
   constructor(private note:NoteService) { }
@@ -35,12 +35,14 @@ export class NotesComponent implements OnInit {
     console.log(event)
     this.getnotes()
   }
-  updatedData(event:any) {
+  updatedIcon(event:any) {
     console.log(event);
     this.getnotes();
+    this.changeNoteEvent.emit(event)
   }
   iconRefresh(event:any){
     console.log(event)
     this.getnotes();
+    this.changeNoteEvent.emit(event)
   }
 }

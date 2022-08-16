@@ -1,3 +1,4 @@
 
 <app-create-note (messageEvent)="receiveMessage($event)"></app-create-note>
-<app-display [childMessage]="parentMessage" (updatedisplay)="updatedData($event)" (displayArchive)="receiveMessagearchive($event)"></app-display>
+<app-display [childMessage]="parentMessage"  (updatedisplay)="updatedIcon($event)" (displayArchive)="receiveMessagearchive($event)" (changeNoteEvent)="iconRefresh($event)"> </app-display>
+

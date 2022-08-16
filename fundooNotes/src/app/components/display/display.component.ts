@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Inject} from '@angular/core';
+import { NoteService } from '../../services/noteservice/note.service';
+import {Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -11,10 +13,8 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class DisplayComponent implements OnInit {
   @Input() childMessage: any; 
-  @Output() changeColorOfNote = new EventEmitter<any>();
-  @Output() updatedisplay = new EventEmitter<string>();
-  @Output() displayArchive = new EventEmitter<string>();
-  @Output() messageEvent = new EventEmitter<any>();
+  @Output() changeNoteEvent = new EventEmitter<any>();
+  
 
   searchString:any='';
   message:any;
@@ -23,9 +23,17 @@ export class DisplayComponent implements OnInit {
   Grid:any = true;
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private note:NoteService, public dialog: MatDialog, private data:DataService) {}
 
   ngOnInit(): void {
+    this.data.currentView.subscribe((flag)=>{
+      this.Grid=flag
+      console.log(this.Grid)
+    })
+    this.subscription = this.data.currentMessage.subscribe((message: any) => {this.message = message;
+      console.log(message);
+    })
+
   }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
@@ -36,17 +44,15 @@ export class DisplayComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result:any)=> {
       console.log('The dialog was closed');
-      this.updatedisplay.emit(result);
+      this.changeNoteEvent.emit(result);
     });
   }
   recieveArchiveNote(event:any){
-    this.displayArchive.emit(event);
+    this.changeNoteEvent.emit(event);
   }
-  colourchanged(event:any){
+  iconRefresh(event:any){
     console.log(event);
-    this.changeColorOfNote.emit("colour")
-    }
-    reloadCurrentPage() {
-      window.location.reload();
-     }
+    this.colour=event;
+    this.changeNoteEvent.emit(event)
+    }     
 }

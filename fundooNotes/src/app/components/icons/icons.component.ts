@@ -4,10 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ArchiveComponent } from '../archive/archive.component';
 import { TrashComponent } from '../trash/trash.component';
-
-
-
-
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -55,7 +51,7 @@ export class IconsComponent implements OnInit {
 
     this.note.archive_note(reqdata).subscribe((res:any)=>{
       console.log(res);
-      this.changeNoteEvent.emit("Note is archived");
+      this.changeNoteEvent.emit(res);
       this.snackBar.open('archived')
   })
   this.snackBar.open('archived','',{
@@ -90,7 +86,7 @@ istrash(){
   console.log(data)
   this.note.trash_note(data).subscribe((res:any)=>{
     console.log(res);
-    this.changeNoteEvent.emit('Note Trashed')
+    this.changeNoteEvent.emit(res)
     this.snackBar.open('Note trashed')
   })
 }
@@ -101,7 +97,7 @@ untrash(){
   console.log(data);
   this.note.untrash_note(data).subscribe((res:any)=>{
     console.log(res);
-    this.changeNoteEvent.emit('Note Trashed')
+    this.changeNoteEvent.emit(res)
     this.snackBar.open('Note untrashed')    
   })
   }
@@ -112,7 +108,7 @@ untrash(){
     console.log(data);
     this.note.delete(data).subscribe((res:any)=>{
       console.log(res);
-      this.changeNoteEvent.emit('Note deleted')
+      this.changeNoteEvent.emit(res)
       this.snackBar.open('Note deleted')    
     })
 
@@ -126,11 +122,10 @@ change_colour(note_colour:any){
   console.log(data)
   this.note.change_note_color(data).subscribe((res:any)=>{
     console.log(res);
-    this.changeNoteEvent.emit(note_colour)
+    this.changeNoteEvent.emit(res)
   })
   this.snackBar.open('Note color changed','',{
     duration:2000,
   });
 }
-
 }
