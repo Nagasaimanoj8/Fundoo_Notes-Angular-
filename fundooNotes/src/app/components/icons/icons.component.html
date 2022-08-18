@@ -1,11 +1,8 @@
 <div class="allicons"  fxLayout="row" fxLayoutAlign="start start">
-
   <img class="bell" src="assets/bell.svg" *ngIf="!trash">
   <img class="personadd" src="assets/personadd.svg" *ngIf="!trash">
-
   <img mat-icon-button matTooltip="Background options" [matMenuTriggerFor]="color" *ngIf="!trash"
     src="assets/pallette.svg" class="pallette">
-
   <mat-menu #color="matMenu">
     <div fxLayout="row wrap" style=" width: 180px">
       <div *ngFor="let color of colour" class="bg-color">
@@ -21,7 +18,7 @@
   <button mat-icon-button matTooltip="Delete forever" *ngIf="trash" (click)="deleteforever()">
     <img src="assets/deleteforever.svg" class="delete">
   </button>
-  <img mat-icon-button matTooltip="Unarchive" (click)="Unarchive()" *ngIf="archive && !trash" src="assets/unarchive.svg"
+  <img mat-icon-button matTooltip="Unarchive" (click)="unarchive()" *ngIf="archive && !trash" src="assets/unarchive.svg"
     class="unarchive">
   <img mat-icon-button (click)="isarchive()" *ngIf="!archive&&!trash" class="archive" src="assets/archive.svg" />
   <img *ngIf="!trash" class="more" src="assets/more.svg" alt="" mat-icon-button [matMenuTriggerFor]="menu">

@@ -1,8 +1,9 @@
 .display{
+    
     border:2px solid transparent;
     overflow: hidden;
     display:flex;
-    width: 21vw;
+    width: 17vw;
     height: 23vh;
    margin-left: 20px;    
     border: 1px solid grey;
@@ -40,7 +41,7 @@ p{
     display:flex;
     width: 35vw;
     height: 18vh;
-    border-radius: 10px;
+    border-radius: 20px;
     border:2px solid transparent ;
     padding:10px ;
    flex-direction: column;
@@ -54,9 +55,26 @@ p{
     width: 37vw;
     margin:5px;
     border:1px solid  transparent;
-    border-radius:10px ;
+    border: radius 10px;
     
 }
 .appicons{
+    visibility: hidden;
+}
+.appicons2{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    margin: 0 8px;
+    height:32px;
+    width: 50px;
+}
+.display:hover .appicons{
+    cursor: pointer;
+    visibility: visible;   
+}
+.display2:hover .appicons2{
+    cursor: pointer;
+    visibility: visible;   
 }
 

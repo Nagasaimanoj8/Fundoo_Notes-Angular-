@@ -1,5 +1,5 @@
-<div class="main">
-    <div class="display" fxLayout="column" fxLayoutAlign="start " >
+<div class="main" [style.background]="colour">
+    <div class="display" fxLayout="column" fxLayoutAlign="start "  [style.background]="colour">
 
         <div class="title" fxLayout="column"  [style.background]="colour">
             <div>
@@ -11,7 +11,7 @@
             </div>
             
             <div   fxLayout="row" fxLayoutAlign="space-between center"[style.background]="colour">
-                <app-icons [notedata]="data" (changeNoteEvent)=" colourchanged($event)"></app-icons>
+                <app-icons  [notedata]="data" (changeNoteEvent)=" iconRefresh($event)"></app-icons>
                 <button (click)="close()">close</button>
             </div>
            

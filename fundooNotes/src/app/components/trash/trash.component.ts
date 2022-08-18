@@ -25,7 +25,6 @@ export class TrashComponent implements OnInit {
       })
   }
   receiveMessage(event:any){
-    console.log(event);
   this.trash_note();
   }
   }

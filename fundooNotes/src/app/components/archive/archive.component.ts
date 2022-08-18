@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
+ 
+  
   result:any;
 
   constructor(private note:NoteService,public dialog: MatDialog,) { }
@@ -24,6 +26,19 @@ export class ArchiveComponent implements OnInit {
         return object.archive===1;
        })
       })
+  }
+  getunarchive(){
+    this.note.getallnotes().subscribe((res:any)=>{
+      console.log(res);
+       this.result= res
+       this.result.reverse()
+       this.result=this.result.filter((object:any)=>{
+        return object.archive===0;
+       })
+      })
+  }
+  unarchiveIcon(event:any){
+    this.getunarchive();
   }
   updatedIcon(event:any){
   this.getarchivenotes();

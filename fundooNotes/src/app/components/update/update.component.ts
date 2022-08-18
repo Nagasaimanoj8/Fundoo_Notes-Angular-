@@ -40,20 +40,22 @@ export class UpdateComponent implements OnInit {
     let data={
       'title': this.title,
       'description':this.description,
-      'userId':this.notesId
+      'userId':this.notesId,
+      'colour':this.colour
     }
     this.note. update_note(data).subscribe((res:any)=>{
       console.log(res);
-      this.updatedisplay.emit(res)
+      this.onNoClick();
+      this. updatedisplay.emit(res)
     })
   }
   receiveMessage(event:any){
     console.log(event);
     this.colour=event;
-    this.updatedisplay.emit(event);
+    this. changeNoteEvent.emit(event);
 
   }
-  colourchanged(event:any){
+  iconRefresh(event:any){
     console.log(event);
     this.colour=event;
     this.changeNoteEvent.emit(event)

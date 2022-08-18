@@ -12,12 +12,16 @@
 .text{
     width:90%;
     height: 50px;
-    border-color: transparent;
-    background-size: cover;
-    box-sizing: border-box;
+    border: none ;
+    outline: none;
+    background-color: transparent;
+    
 }
 .notes{
     width:90%;
     height: 70px;
     border: 1px;
+    border: none ;
+    outline: none;
+    background-color: transparent;
 }

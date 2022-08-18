@@ -1,5 +1,5 @@
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -10,13 +10,20 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnDestroy {
+export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
   token: any;
   message:any;
   subscription: any;
   searchString:any='';
   gridView:any=true;
+
+  @Input() childMessage: any;
+  isMenuOpen = true;
+  contentMargin = 200;
+  value: any;
+  
+  
 
   private _mobileQueryListener: () => void;
 

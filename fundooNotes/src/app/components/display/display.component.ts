@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from '../../services/noteservice/note.service';
-import {Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 import { DataService } from 'src/app/services/data.service';
@@ -13,10 +12,11 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class DisplayComponent implements OnInit {
   @Input() childMessage: any; 
-  @Output() changeNoteEvent = new EventEmitter<any>();
+  @Output() changeNoteEvent = new EventEmitter<string>();
+  @Output() updatedisplay = new EventEmitter<string>();
   
 
-  searchString:any='';
+  searchString:any=' ';
   message:any;
   subscription: any;
   colour:any;
@@ -37,22 +37,24 @@ export class DisplayComponent implements OnInit {
   }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
-      width: '500px',
-       data:note,
+      width:'fit-content',
+      data:note,
        panelClass: 'my-custom-dialog-class'
     });
 
     dialogRef.afterClosed().subscribe((result:any)=> {
       console.log('The dialog was closed');
-      this.changeNoteEvent.emit(result);
+      this.updatedisplay.emit(result);
     });
   }
   recieveArchiveNote(event:any){
     this.changeNoteEvent.emit(event);
   }
-  iconRefresh(event:any){
-    console.log(event);
-    this.colour=event;
-    this.changeNoteEvent.emit(event)
-    }     
+  iconRefresh($event:any){
+    console.log($event);
+    this.colour=$event;
+    this.changeNoteEvent.emit($event)
+    }
+    
+         
 }

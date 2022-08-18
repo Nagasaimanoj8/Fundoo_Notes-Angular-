@@ -29,7 +29,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { AuthguardServiceService } from './services/authguard-service.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
-import { SearchfilterPipe } from './Pipe/filter.pipe';
+import {  FilterPipe } from './Pipe/filter.pipe';
 import { DemoComponent } from './components/demo/demo.component';
 
 
@@ -51,7 +51,7 @@ import { DemoComponent } from './components/demo/demo.component';
     IconsComponent,
     DisplayComponent,
     UpdateComponent,
-    SearchfilterPipe,
+    FilterPipe,
     DemoComponent,
     
   ],

@@ -30,8 +30,7 @@ export class IconsComponent implements OnInit {
 
   constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
   @Output() changeNoteEvent = new EventEmitter<string>();
-  @Output()displayicons  = new EventEmitter<string>();
-
+  
   ngOnInit(): void {
     let del = this.route.snapshot.component;
     if (del == TrashComponent) {
@@ -58,19 +57,17 @@ export class IconsComponent implements OnInit {
     duration:1000
   });
   }
-  receiveMessage(event:any){
-    console.log(event);
-  this.isarchive();
-}
-Unarchive(){
+ 
+unarchive(){
   let data = {
     userId: this.notedata.id,
    
   };
-  console.log('note is archieve');
+  console.log(this.notedata.id);
   this.note.unarchive_note(data).subscribe((res:any)=>{
-    console.log('unArchieve Notes are :', res);
-    this.changeNoteEvent.emit(res);
+    console.log( res);
+    window.location.reload();
+    console.log('note refreshed');   
   });
   this.snackBar.open('Note archive status changed' ,'', {
     duration: 3000,
@@ -97,7 +94,7 @@ untrash(){
   console.log(data);
   this.note.untrash_note(data).subscribe((res:any)=>{
     console.log(res);
-    this.changeNoteEvent.emit(res)
+    window.location.reload();
     this.snackBar.open('Note untrashed')    
   })
   }
@@ -108,7 +105,7 @@ untrash(){
     console.log(data);
     this.note.delete(data).subscribe((res:any)=>{
       console.log(res);
-      this.changeNoteEvent.emit(res)
+      window.location.reload();
       this.snackBar.open('Note deleted')    
     })
 
