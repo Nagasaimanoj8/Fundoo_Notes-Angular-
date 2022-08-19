@@ -1,83 +1,147 @@
 .example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
-  
-  h1.example-app-name {
-    margin-left: 8px;
-  }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-  }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-  .icon{
-    width: 40px;
-     height: 40px; 
-     user-select: auto;
-  }
-  mat-nav-list{
-    width: 15vw;
-  }
-  
-  .refresh{
-    margin-left: 30px;
-    padding:0px 0px 0px 60px;
-    height: 30px;
-  }
-  .view,.settings{
-    margin-left: 20px;
-    height: 20px;
-  }
-  .apps{
-    height: 30px;
-    padding:0px 0px 0px 50px;
-  }
-  .account{
-    height: 30px;
-    padding:0px 0px 0px 20px;
-  }
-  .icons{
-    height:5vh;
-  }
-  .notes,.remainder,.label,.archive,.trash{
-    padding-right: 40px;
-  }
-  .icon-sm,.icon-xs{
-    margin: 0%;
-    width: 10%
-  }
-  .searchdiv{
-    width: 50%;
-    margin-left: 70px;
-    height: 20%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  #search {
-    opacity: 0.8;
-  }
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  user-select: auto;
+}
+
+mat-nav-list {
+  width: 17vw;
+}
+
+.refresh {
+  margin-left: 30px;
+  padding: 0px 0px 0px 60px;
+  height: 30px;
+}
+
+.view,
+.settings {
+  margin-left: 20px;
+  height: 20px;
+}
+
+.apps {
+  height: 30px;
+  padding: 0px 0px 0px 50px;
+}
+
+.account {
+  height: 30px;
+  padding: 0px 0px 0px 20px;
+}
+
+.icons {
+  height: 5vh;
+}
+
+.notes,
+.remainder,
+.label,
+.archive,
+.trash {
+  padding-right: 40px;
+}
+
+.icon-sm,
+.icon-xs {
+  margin: 0%;
+  width: 10%
+}
+
+.search {
+  width: 50vw;
+  margin-left: 7px;
+
+}
+
+#search {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 682px) {
   .search {
-  
-    border-radius: 10%;
-    width: 50%;
-    background: rgba(0, 0, 0, 0.02);
+    width: 40vw;
   }
+
+  .view {
+    float: left;
+    height: 20px;
+    padding-left: 10px;
+  }
+
+  .refresh,
+  .settings,
+  .apps {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .search {
+    width: 40vw;
+  }
+
+  .view {
+
+    height: 20px;
+    padding-left: 10px;
+  }
+
+  .refresh,
+  .settings,
+  .apps {
+    display: none;
+  }
+}
+
+@media screen and(max-width:877px) {
+
+  .view {
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+  }
+}
+@media screen  and (max-width: 428px){
+  .search{
+    width:20vw;
+  }
+}
+@media screen  and (max-width: 320px){
+  .search{
+    width:10vw;
+  }
+}
+@media screen  and (max-width: 270px){
+  .account {
+    height: 30px;
+    padding: 0px 0px 0px -10px;
+  }
+}

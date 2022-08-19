@@ -1,6 +1,6 @@
 <div class="gridnote" *ngIf="Grid" fxLayout="row wrap" fxLayoutAlign="start start">
     <div class="main" fxLayout="column" fxLayoutAlign="space-around start"
-        *ngFor="let note of childMessage | filterpipe: message">
+        *ngFor="let note of childMessage | filterpipe:message">
         <div fxLayout="column">
             <div class="display" [style.background]="note.colour" >
                 <div (click)="openDialog(note)">

@@ -77,4 +77,14 @@ p{
     cursor: pointer;
     visibility: visible;   
 }
-
+::ng-deep .my-custom-dialog-class {
+    mat-dialog-container {
+      padding: 0;
+    }
+  }
+  @media screen  and (max-width: 667px){
+    .display{
+      width:70vw;
+    }
+}
+  

@@ -5,6 +5,7 @@ import { UpdateComponent } from '../update/update.component';
 import { DataService } from 'src/app/services/data.service';
 
 
+
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
@@ -37,7 +38,7 @@ export class DisplayComponent implements OnInit {
   }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
-      width:'fit-content',
+      width:'fit-content ',
       data:note,
        panelClass: 'my-custom-dialog-class'
     });

@@ -3,6 +3,7 @@ import {ChangeDetectorRef, Component, Input, OnDestroy, OnInit} from '@angular/c
 import { DataService } from 'src/app/services/data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import{MediaObserver,MediaChange} from '@angular/flex-layout';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class DashboardComponent implements OnInit {
   subscription: any;
   searchString:any='';
   gridView:any=true;
+  isshow=true;
 
   @Input() childMessage: any;
   isMenuOpen = true;
@@ -39,6 +41,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+  show(){
+    this.isshow=true;
   }
    searchNote(text:any){
     this.data.changeMessage(text.target.value);

@@ -1,7 +1,7 @@
 .title{
-    margin-top: 30px;
+    margin-top: 90px;
     border: 2px solid grey;
-    width: 500px;
+    width: 50vw;
     padding: 10px;
     display: flex;
     border-radius: 10px;
@@ -23,5 +23,19 @@
     border: 1px;
     border: none ;
     outline: none;
+    position:relative;
     background-color: transparent;
+}
+ @media screen and (max-width: 375px){
+    .title{
+        margin-top: 30px;
+        border: 2px solid grey;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        border-radius: 10px;
+        box-sizing: border-box;
+       background-size: cover;
+       box-shadow: 0px 0px 10px rgb(0, 0,0.1);
+    }
 }
