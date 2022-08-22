@@ -42,4 +42,5 @@ export class UserService {
     return this.http.postservice('http://127.0.0.1:8000/api/register',data,false,header)
   
   }
+  
 }

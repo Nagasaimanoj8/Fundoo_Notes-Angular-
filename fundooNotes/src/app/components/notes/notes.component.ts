@@ -27,24 +27,21 @@ export class NotesComponent implements OnInit {
       })
     })
   }
-  receiveMessage(event:any){
-    console.log(event);
+  receiveMessage($event:any){
+    console.log($event);
   this.getnotes();
-  this.changeNoteEvent.emit(event);
   }
-  updatedIcon(event:any) {
-    console.log(event);
-    this.getnotes();
-    this.changeNoteEvent.emit(event)
-  }
-  receiveMessagearchive(event:any){
-    console.log(event);
+  updatedIcon($event:any) {
+    console.log($event);
     this.getnotes();
   }
-  iconRefresh(event:any){
-    console.log(event)
+  receiveMessagearchive($event:any){
+    console.log($event);
     this.getnotes();
-    this.changeNoteEvent.emit(event)
+  }
+  iconRefresh($event:any){
+    console.log($event)
+    this.getnotes();
   }
   
 }

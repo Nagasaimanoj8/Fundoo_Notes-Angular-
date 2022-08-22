@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/userservice/user.service';
 
 @Component({
   selector: 'app-demo',
@@ -6,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
-  user: any;
 
-  constructor() { }
+  constructor( private user: UserService) { }
 
   ngOnInit(): void {
   }
 
  submit(){
   let data={
-    email:'nagasaimanoj',
-    password:'Jonamiasagan'
+    email:'nagasaimanoj333@gmail.com',
+    password:'Ashrithap@8'
   }
+  console.log(data);
+  
   this.user.signin(data).subscribe((res:any)=>{
     console.log("token",res)
     localStorage.setItem('token',res.success.token)

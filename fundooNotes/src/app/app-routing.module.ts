@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisplayComponent } from './components/display/display.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path:'notes',component:NotesComponent},
     {path:'archive',component:ArchiveComponent},
     {path:'trash',component:TrashComponent},
+    {path:'display',component:DisplayComponent},
   ]}
 ];
 

@@ -8,15 +8,19 @@
     align-items: center;
 }
 .container{
-    width: 35%;
-    height: 95%; 
+    width: 51vw;
+    height: 86vh; 
     display: flex;
-    padding:  30px 0px 100px 0px;
+    padding: 53px 0px 99px 0px;
     justify-content: center;
     margin: 20px auto;
     border: 1px solid grey;
       
 }
+mat-form-field{
+    width: 350px;
+}
+
 .F{
     color:Blue;
     padding:40px 0px 0px 0px;
@@ -68,4 +72,183 @@ h4{
 h5{
     float:right;
     
+}
+@media screen and(max-width:775) {
+    .container{
+        width: 51vw;
+        height: 86vh; 
+        display: flex;
+        padding: 53px 0px 99px 0px;
+        justify-content: center;
+        margin: 20px auto;
+        border: 1px solid grey;
+          
+    }
+        .F{
+        color:Blue;
+        padding:30px 0px 0px 0px;
+    }
+    .u{
+        color:rgb(234, 14, 14);
+        padding:30px 0px 0px 0px;
+    }
+    .n{
+        color:yellow;
+        padding:30px 0px 0px 0px;
+    }
+    .d{
+        color:blue;
+        padding:30px 0px 0px 0px;
+    }
+    .o{
+        color:green;
+        padding:30px 0px 0px 0px;
+    }
+    .o{
+        color:rgb(234, 14, 14);
+        padding:30px 0px 0px 0px;
+    }
+    .Signin{
+        text-align: center;
+       padding: 0px 0px 20px 0px;
+    }
+    p{
+        padding: 20px 30px 0px 0px ;
+    }
+    .learn{
+        color:blue;
+        padding: 0px 320px 0px 0px ;
+        
+    }
+    .account{
+        color:blue;
+        padding: 0px 220px 0px 0px ;
+    }
+    .button{
+       
+        width: 5vw;
+       
+    }
+    h4{
+        color:blue;
+        padding-left: 100px;
+
+    }
+    h5{
+        float:right;
+        
+    }
+    mat-form-field{
+        width: 150px;
+        padding-left: 200px;
+    }   
+}
+@media screen and (max-width: 700px)  {
+     
+    
+    p{
+        padding: 20px 0px 0px 20px ;
+    }
+    .learn{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+        
+    }
+    .account{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+    }
+    .button{
+       
+        width: 3vw;
+        margin-right: 60px;
+       
+    }
+    h4{
+        color:blue;
+        padding-left: 100px;
+    }
+    h5{
+        float:right;
+        
+    }
+    .label{
+        width:180px;
+    }  
+    mat-form-field{
+        width: 250px;
+        padding-left:50px ;
+    } 
+}
+@media screen and (max-width: 600px)  {
+     
+    
+    p{
+        padding: 20px 20px 0px 20px ;
+    }
+    .learn{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+        
+    }
+    .account{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+    }
+    .button{
+       
+        width: 3vw;
+       
+    }
+    h4{
+        color:blue;
+        padding-left: 100px;
+    }
+    h5{
+        float:right;
+        
+    }
+    .label{
+        width:180px;
+    }  
+    mat-form-field{
+        width: 220px;
+        padding-left:50px ;
+    } 
+}
+@media screen and (max-width: 525px)  {
+     
+    
+    p{
+        padding: 20px 20px 0px 20px ;
+    }
+    .learn{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+        
+    }
+    .account{
+        color:blue;
+        padding: 0px 0px 0px 20px ;
+    }
+    .button{
+       
+        width: 3vw;
+       
+    }
+    h4{
+        color:blue;
+        padding-left: 100px;
+    }
+    h5{
+        float:right;
+        
+    }
+    .label{
+        width:180px;
+    }  
+    mat-form-field{
+        width: 180px;
+        padding-left:50px ;
+    } 
 }

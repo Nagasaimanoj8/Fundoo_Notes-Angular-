@@ -36,7 +36,7 @@ export class UpdateComponent implements OnInit {
     this.dialogRef.close();
   }
   close(){
-    console.log(this.title,this.description);
+    console.log(this.title,this.description,this.colour);
     let data={
       'title': this.title,
       'description':this.description,
@@ -49,15 +49,13 @@ export class UpdateComponent implements OnInit {
       this. updatedisplay.emit(res)
     })
   }
-  receiveMessage(event:any){
-    console.log(event);
-    this.colour=event;
-    this. changeNoteEvent.emit(event);
-
-  }
   iconRefresh(event:any){
     console.log(event);
     this.colour=event;
     this.changeNoteEvent.emit(event)
   }
 }
+function res(res: any) {
+  throw new Error('Function not implemented.');
+}
+

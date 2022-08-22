@@ -3,7 +3,7 @@
         *ngFor="let note of childMessage | filterpipe:message">
         <div fxLayout="column">
             <div class="display" [style.background]="note.colour" >
-                <div (click)="openDialog(note)">
+                <div (click)="openDialog(note)"  [style.background]="note.colour"class="note">
                     <h3>{{note.title}}</h3>
                     <p>{{note.description}}</p>
                 </div>
@@ -14,9 +14,9 @@
 </div>
 <div class="listnote" fxLayout="column" fxLayoutAlign="start center" *ngIf="!Grid" fxLayout="column wrap">
     <div class="main2" *ngFor="let note of childMessage | filterpipe: message">
-        <div fxLayout=>
+        <div fxLayout>
             <div class="display2" [style.background]="note.colour">
-                <div (click)="openDialog(note)">
+                <div (click)="openDialog(note)" class="note">
                     <h4>{{note.title}}</h4>
                     <h5>{{note.description}}</h5>
                     <app-icons class="appicons2"  [notedata]="note" (changeNoteEvent)=" iconRefresh($event)"></app-icons>

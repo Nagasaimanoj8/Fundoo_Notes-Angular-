@@ -8,10 +8,10 @@
   right: 0;
 }
 
-.example-toolbar {
-  position: fixed;
-  z-index: 2;
-}
+// .example-toolbar {
+//   position: absolute;
+//   z-index: 2;
+// }
 
 h1.example-app-name {
   margin-left: 8px;
@@ -19,9 +19,9 @@ h1.example-app-name {
 
 .example-sidenav-container {
   flex: 1;
-}
+} 
 
-.example-is-mobile .example-sidenav-container {
+.example-sidenav-container {
   flex: 1 0 auto;
 }
 
@@ -45,6 +45,7 @@ mat-nav-list {
 .settings {
   margin-left: 20px;
   height: 20px;
+  width: 20px;
 }
 
 .apps {
@@ -59,6 +60,7 @@ mat-nav-list {
 
 .icons {
   height: 5vh;
+ 
 }
 
 .notes,
@@ -77,23 +79,42 @@ mat-nav-list {
 
 .search {
   width: 50vw;
-  margin-left: 7px;
+  margin-left: 30px;
 
 }
 
 #search {
   opacity: 0.8;
 }
-
+@media screen and (max-width: 900px) {
+  mat-nav-list {
+    width: 30vw;
+  }
+  
+  .view {
+    
+    height: 20px;
+   width: 20px;
+   margin-left: 20px;
+   
+  }
+}
 @media screen and (max-width: 682px) {
   .search {
     width: 40vw;
+    margin-right: 60px;
   }
 
   .view {
-    float: left;
+    
     height: 20px;
-    padding-left: 10px;
+   margin-right: 40px;
+   
+  }
+  .account {
+    float:left;
+    height: 30px;
+    padding: 0px 0px 0px 22px;
   }
 
   .refresh,
@@ -106,6 +127,7 @@ mat-nav-list {
 @media screen and (max-width: 667px) {
   .search {
     width: 40vw;
+    
   }
 
   .view {
@@ -128,20 +150,39 @@ mat-nav-list {
     height: 20px;
     padding-left: 10px;
   }
+  mat-nav-list {
+    width: 40vw;
+  }
+}
+@media screen and(max-width:600px) {
+  mat-nav-list {
+    width: 40vw;
+  }
 }
 @media screen  and (max-width: 428px){
   .search{
     width:20vw;
   }
+  mat-nav-list {
+    width: 60vw;
+  }
+
 }
 @media screen  and (max-width: 320px){
   .search{
     width:10vw;
   }
+  mat-nav-list {
+    width: 60vw;
+  }
+
 }
 @media screen  and (max-width: 270px){
   .account {
     height: 30px;
-    padding: 0px 0px 0px -10px;
+   
+  }
+  mat-nav-list {
+    width: 60vw;
   }
 }

@@ -27,19 +27,6 @@ export class ArchiveComponent implements OnInit {
        })
       })
   }
-  getunarchive(){
-    this.note.getallnotes().subscribe((res:any)=>{
-      console.log(res);
-       this.result= res
-       this.result.reverse()
-       this.result=this.result.filter((object:any)=>{
-        return object.archive===0;
-       })
-      })
-  }
-  unarchiveIcon(event:any){
-    this.getunarchive();
-  }
   updatedIcon(event:any){
   this.getarchivenotes();
   }

@@ -27,10 +27,10 @@ export class IconsComponent implements OnInit {
   @Input() notedata:any
     archive:boolean=false
   trash:boolean=false
-
-  constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
   @Output() changeNoteEvent = new EventEmitter<string>();
-  
+  constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
+
+  @Output() displayicons = new EventEmitter<string>();
   ngOnInit(): void {
     let del = this.route.snapshot.component;
     if (del == TrashComponent) {
@@ -67,12 +67,11 @@ unarchive(){
   this.note.unarchive_note(data).subscribe((res:any)=>{
     console.log( res);
     window.location.reload();
-    console.log('note refreshed');   
+    console.log('unarchived');   
   });
-  this.snackBar.open('Note archive status changed' ,'', {
+  this.snackBar.open('Note unarchive ' ,'', {
     duration: 3000,
-    verticalPosition: 'bottom',
-    horizontalPosition: 'center'
+   
   });
 }
 istrash(){
@@ -83,7 +82,7 @@ istrash(){
   console.log(data)
   this.note.trash_note(data).subscribe((res:any)=>{
     console.log(res);
-    this.changeNoteEvent.emit(res)
+    this.changeNoteEvent.emit(res);
     this.snackBar.open('Note trashed')
   })
 }
@@ -94,8 +93,8 @@ untrash(){
   console.log(data);
   this.note.untrash_note(data).subscribe((res:any)=>{
     console.log(res);
-    window.location.reload();
-    this.snackBar.open('Note untrashed')    
+  window.location.reload();
+    this.snackBar.open('Note untrashed');    
   })
   }
   deleteforever(){
