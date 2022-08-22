@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteService } from '../../services/noteservice/note.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-create-note',
   templateUrl: './create-note.component.html',
@@ -11,7 +11,7 @@ export class CreateNoteComponent implements OnInit {
   isshow=false;
   title:any;
   description:any;
-  constructor(private note:NoteService) { }
+  constructor(private note:NoteService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +28,7 @@ export class CreateNoteComponent implements OnInit {
     this.note.addnote(data).subscribe((res:any)=>{
       console.log(res);
       this.messageEvent.emit(res)
+      this.snackBar.open('Note created')
     })
   }
 }
