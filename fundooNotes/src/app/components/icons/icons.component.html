@@ -1,6 +1,6 @@
 <div class="allicons"  fxLayout="row" fxLayoutAlign="start start">
   <img class="bell" src="assets/bell.svg" *ngIf="!trash">
-  <img class="personadd" src="assets/personadd.svg" *ngIf="!trash">
+  <img class="personadd" src="assets/personadd.svg" *ngIf="!trash" (click)="openDialog()">
   <img mat-icon-button matTooltip="Background options" [matMenuTriggerFor]="color" *ngIf="!trash"
     src="assets/pallette.svg" class="pallette">
   <mat-menu #color="matMenu">

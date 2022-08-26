@@ -31,6 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import {  FilterPipe } from './Pipe/filter.pipe';
 import { DemoComponent } from './components/demo/demo.component';
+import { CollabratorComponent } from './components/collabrator/collabrator.component';
 
 
 
@@ -53,6 +54,7 @@ import { DemoComponent } from './components/demo/demo.component';
     UpdateComponent,
     FilterPipe,
     DemoComponent,
+    CollabratorComponent,
     
   ],
   imports: [

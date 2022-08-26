@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ArchiveComponent } from '../archive/archive.component';
 import { TrashComponent } from '../trash/trash.component';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from '../update/update.component';
+import { CollabratorComponent } from '../collabrator/collabrator.component';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -28,7 +31,7 @@ export class IconsComponent implements OnInit {
     archive:boolean=false
   trash:boolean=false
   @Output() changeNoteEvent = new EventEmitter<string>();
-  constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
+  constructor(private note:NoteService, public dialog:MatDialog, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
 
   @Output() displayicons = new EventEmitter<string>();
   ngOnInit(): void {
@@ -122,6 +125,19 @@ change_colour(note_colour:any){
   })
   this.snackBar.open('Note color changed','',{
     duration:2000,
+  });
+}
+openDialog(): void {
+  const dialogRef = this.dialog.open(CollabratorComponent, {
+    width:'60vw ',height:'40vh',
+
+     panelClass: 'my-custom-dialog-class'
+    
+    });
+
+  dialogRef.afterClosed().subscribe((result:any)=> {
+    console.log('The dialog was closed');
+    this.changeNoteEvent.emit(result);
   });
 }
 }
